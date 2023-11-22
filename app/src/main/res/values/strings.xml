@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToDoApp</string>
+    <string name="email">email@email.com</string>
+    <string name="password">123456</string>
 </resources>
