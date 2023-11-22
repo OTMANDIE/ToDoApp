@@ -1,6 +1,8 @@
 package com.example.todoapp
 
-import androidx.appcompat.app.AppCompatActivity
+import TaskDetailsActivity
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,10 +10,16 @@ import android.view.View
 import android.widget.PopupMenu
 
 class MainActivity : AppCompatActivity() {
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
     }
+
+}
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
@@ -48,3 +56,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
