@@ -11,6 +11,7 @@ class TaskAdapter(private val itemList: List<TaskData>): RecyclerView.Adapter<Ta
         val textView1: TextView = itemView.findViewById(R.id.textView1)
         val textView2: TextView = itemView.findViewById(R.id.textView2)
         val textView3: TextView = itemView.findViewById(R.id.textView3)
+        val textView4: TextView = itemView.findViewById(R.id.textView4)
     }
 
 
@@ -22,8 +23,9 @@ class TaskAdapter(private val itemList: List<TaskData>): RecyclerView.Adapter<Ta
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = itemList[position]
         holder.textView1.text = item.title
-        holder.textView2.text = item.description
-        holder.textView3.text = item.endDate
+        holder.textView2.text = item.priority.toString()
+        holder.textView3.text = item.description
+        holder.textView4.text = item.endDate
     }
 
     override fun getItemCount(): Int {

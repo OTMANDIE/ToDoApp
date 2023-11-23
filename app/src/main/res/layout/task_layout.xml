@@ -1,65 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">
 
     <!-- TextView 1 -->
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView 1"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
 
     <!-- TextView 2 -->
+
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView 2"
-        android:layout_below="@id/textView1"
-        android:layout_centerHorizontal="true"/>
+        android:id="@+id/textView1"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="TextView 1" />
 
     <!-- TextView 3 -->
+
+    <!-- TextView 4 -->
+
+    <!-- Horizontal LinearLayout for Buttons -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="80dp"
+        android:layout_height="54dp"
+        android:layout_below="@id/textView1"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="-54dp"
+        android:layout_toEndOf="@+id/textView1"
+        android:gravity="center"
+        android:text="TextView 2" />
+
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="264dp"
+        android:layout_height="99dp"
+        android:layout_below="@id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="TextView 3" />
+
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView 3"
-        android:layout_below="@id/textView2"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
+        android:text="TextView 4" />
 
-    <!-- Vertical LinearLayout for Buttons -->
     <LinearLayout
         android:id="@+id/buttonsLayout"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="210dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
         android:orientation="vertical">
 
         <!-- Button 1 -->
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
             android:text="✔️" />
 
         <!-- Button 2 -->
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
             android:text="✏️" />
 
         <!-- Button 3 -->
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@android:color/transparent"
             android:text="❌" />
     </LinearLayout>
 </RelativeLayout>
