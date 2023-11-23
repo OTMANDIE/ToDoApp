@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:hint="title" />
+
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginBottom="17dp"
+        android:hint="description" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupPriority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="17dp">
+
+        <RadioButton
+            android:id="@+id/radioHigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="High Priority" />
+
+        <RadioButton
+            android:id="@+id/radioMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medium Priority" />
+
+        <RadioButton
+            android:id="@+id/radioLow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Low Priority" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:hint="end_date" />
+
+    <Button
+        android:id="@+id/btnAddDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="add" />
+
+</LinearLayout>
