@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var taskAdapter: TaskAdapter
     private lateinit var recyclerView: RecyclerView
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,16 +31,13 @@ class MainActivity : AppCompatActivity() {
             taskAdapter = TaskAdapter(getSampleTaskData())
             recyclerView.adapter = taskAdapter
         }
-
         addButton.setOnClickListener {
             val intent = Intent(this, AddTask::class.java)
             intent.putExtra("taskDataList", ArrayList(taskAdapter.getTaskList()))
             startActivity(intent)
         }
-
     }
-
-    private fun getSampleTaskData(): List<TaskData> {
+    private fun getSampleTaskData(): MutableList<TaskData> {
         val dataList = mutableListOf<TaskData>()
         dataList.add(TaskData("Task 1", "Description 1", Priority.HIGH, "2023-11-24"))
         dataList.add(TaskData("Task 2", "Description 2", Priority.MEDIUM, "2023-11-25"))
@@ -52,19 +47,13 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu, menu)
         return true
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.menu_settings -> {
-                true
-            }
-            R.id.menu_help -> {
-                true
-            }
+            R.id.menu_settings -> {true}
+            R.id.menu_help -> {true}
             else -> super.onOptionsItemSelected(item)
         }
     }
-
     fun showPopupMenu(view: View) {
         val popupMenu = PopupMenu(this, view)
         popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
