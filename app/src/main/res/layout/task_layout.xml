@@ -73,23 +73,6 @@
         android:layout_marginEnd="12dp"
         android:orientation="vertical">
 
-        <!-- Button 1 -->
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@android:color/transparent"
-            android:text="✔️" />
-
-        <!-- Button 2 -->
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@android:color/transparent"
-            android:text="✏️" />
-
-        <!-- Button 3 -->
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"

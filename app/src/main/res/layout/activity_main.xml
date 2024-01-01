@@ -23,46 +23,25 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/HighPriorityBtn"
                     style="@style/CustomButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button 1" />
+                    android:text="HighPriority" />
 
                 <Button
+                    android:id="@+id/MediumPriorityBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/CustomButton"
-                    android:text="Button 2"/>
+                    android:text="MediumPriority"/>
 
                 <Button
+                    android:id="@+id/LowPriorityBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/CustomButton"
-                    android:text="Button 3"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomButton"
-                    android:text="Button 4"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomButton"
-                    android:text="Button 5"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomButton"
-                    android:text="Button 6"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomButton"
-                    android:text="Button 7"/>
+                    android:text="LowPriority"/>
 
             </LinearLayout>
         </HorizontalScrollView>

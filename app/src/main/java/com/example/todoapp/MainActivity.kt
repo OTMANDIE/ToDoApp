@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
@@ -15,15 +16,17 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private lateinit var taskAdapter: TaskAdapter
     private lateinit var recyclerView: RecyclerView
-    @SuppressLint("MissingInflatedId")
+    private var selectedPriority: Priority? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
         val i = intent
         val taskList = i.getSerializableExtra("taskDataList") as? ArrayList<TaskData>
-        val addButton: ImageButton = findViewById(R.id.addButton)
+
         if (taskList != null) {
             taskAdapter = TaskAdapter(taskList)
             recyclerView.adapter = taskAdapter
@@ -31,10 +34,31 @@ class MainActivity : AppCompatActivity() {
             taskAdapter = TaskAdapter(getSampleTaskData())
             recyclerView.adapter = taskAdapter
         }
+
+        val addButton: ImageButton = findViewById(R.id.addButton)
         addButton.setOnClickListener {
             val intent = Intent(this, AddTask::class.java)
             intent.putExtra("taskDataList", ArrayList(taskAdapter.getTaskList()))
             startActivity(intent)
+        }
+
+        val highPriorityBtn: Button = findViewById(R.id.HighPriorityBtn)
+        val mediumPriorityBtn: Button = findViewById(R.id.MediumPriorityBtn)
+        val lowPriorityBtn: Button = findViewById(R.id.LowPriorityBtn)
+
+        highPriorityBtn.setOnClickListener { filterTasksByPriority(Priority.HIGH) }
+        mediumPriorityBtn.setOnClickListener { filterTasksByPriority(Priority.MEDIUM) }
+        lowPriorityBtn.setOnClickListener { filterTasksByPriority(Priority.LOW) }
+    }
+
+    private fun filterTasksByPriority(priority: Priority) {
+        if (selectedPriority == priority) {
+            selectedPriority = null
+            taskAdapter.resetTaskList()
+        } else {
+            selectedPriority = priority
+            val filteredList = taskAdapter.getTaskList().filter { it.priority == priority }
+            taskAdapter.updateTaskList(filteredList)
         }
     }
     private fun getSampleTaskData(): MutableList<TaskData> {
